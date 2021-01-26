@@ -1,0 +1,131 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+void arithmetic() {
+int k = 0;
+int X = 0;
+int Y = 0;
+
+cout <<"Choose Operation\n";
+cout <<"1. Subtraction\n";
+cout <<"2. Addition\n";
+cout <<"3. Multiplication\n";
+cout <<"4. Division\n";
+
+cin >> k;
+cout <<" Enter a number: ";
+cin >> X;
+cout <<"Enter another number: ";
+cin>> Y;
+
+cout <<"Result: ";
+
+switch(k) {
+case 1:
+    cout << (X-Y);
+    break;
+case 2:
+    cout << (X+Y);
+    break;
+case 3:
+    cout <<(X*Y);
+case 4:
+    cout <<(X/Y);
+    break;
+
+default:
+    cout <<"Operation not Valid";
+    break;
+}
+
+cout << endl;
+}
+
+void trignometric () {
+
+int k = 0;
+double value = 0.0;
+cout <<"Choose\n";
+cout <<"1. Cosine\n";
+cout <<"2. Sine\n";
+cout <<"k: ";
+cin >> k;
+
+cout << "Enter a  number:  ";
+cin >> value;
+if(k==1) {
+    cout << cos(value);
+}
+else if(k==2) {
+    cout << sin(value);
+}
+else{
+    cout <<" Operation is not valid. Try Again";
+}
+
+cout << endl;
+}
+
+void logarithmic () {
+    float val = 0.0;
+    cout <<" Enter a number to calculate the log(c):  ";
+    cin >> val;
+    cout << log(val) << endl;
+}
+
+void exponential () {
+float k = 0.0;
+float base = 0.0;
+
+cout << "Enter a value for the base: ";
+cin >> base;
+cout << "Enter the exponent: ";
+cin >> k;
+cout << pow(base, k) << endl;
+
+}
+
+int main() {
+    int c  = 0;
+    char option = 'y';
+    cout << "Advanced Calculator\n";
+
+    cout <<"1. Arithmetic\n";
+    cout <<"2. Trignometric\n";
+    cout <<"3. Logarithmic\n";
+    cout <<"4. Exponential\n";
+    cout<<"Your Option: ";
+
+    while (option == 'y') {
+        cout <<" Choose the type of operation you want to perform\n";
+        cin >> c;
+
+        switch(c) {
+        case 1:
+            arithmetic ();
+            break;
+        case 2:
+            trignometric();
+            break;
+        case 3:
+            logarithmic();
+            break;
+        case 4:
+            exponential();
+            break;
+        default:
+            cout <<"Operation is Not Valid.";
+
+        }
+
+        cout <<"Hello, do you want to continue? y/n" << endl;
+        cin>> option;
+        if(option == 'n') {
+            break;
+        }
+    }
+    return 0;
+}
+
